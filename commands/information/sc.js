@@ -11,7 +11,7 @@ module.exports = {
         if (await handler(ctx, module.exports.handler)) return;
 
         return await ctx.reply(
-            `${quote("https://github.com/itsreimau/ckptw-wabot")}\n` +
+            `${quote("https://github.com/hik4m/alkam-wabot.git")}\n` +
             "\n" +
             config.msg.footer
         ); // Jika Anda tidak menghapus ini, terima kasih!
