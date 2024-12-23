@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/itsreimau/ckptw-wabot.git"
+    "url": "https://github.com/hik4m/alkam-wabot.git"
   },
   "keywords": [
     "whatsapp",
@@ -23,9 +23,9 @@
   "author": "Aqliza Junior Hikam Ramadhan | Alisya Putri Kusumawardani",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/itsreimau/ckptw-wabot/issues"
+    "url": "https://github.com/hik4m/alkam-wabot/issues"
   },
-  "homepage": "https://github.com/itsreimau/ckptw-wabot#readme",
+  "homepage": "https://github.com/hik4m/alkam-wabot.git",
   "dependencies": {
     "@mengkodingan/ckptw": "^4.3.9",
     "@whiskeysockets/baileys": "^6.7.9",
