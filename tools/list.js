@@ -173,6 +173,7 @@ async function get(type, ctx) {
                     "converter": "Converter",
                     "downloader": "Downloader",
                     "entertainment": "Entertainment",
+                    "fun": "Fun",
                     "random": "Randoms",
                     "game": "Game",
                     "group": "Group",
