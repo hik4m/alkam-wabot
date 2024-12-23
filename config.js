@@ -54,6 +54,12 @@ global.config = {
     co: ["6285730824102"], // Nomor co-owner bot
   },
 
+  owner2: {
+    name: "Alisya Putri",
+    number: "6285730824102",
+    organization: "Hikam Companion",
+  },
+
   // Konfigurasi stiker bot
   sticker: {
     packname: "Stiker ini dibuat oleh", // Nama paket stiker
