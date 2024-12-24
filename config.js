@@ -77,7 +77,7 @@ global.config = {
     selfOwner: false, // Apakah bot menjadi owner
     selfReply: true, // Apakah bot merespon pesan yang dikirim bot sendiri
     timeZone: "Asia/Jakarta", // Zona waktu bot
-    usePairingCode: false, // Menggunakan kode pairing untuk koneksi
+    usePairingCode: true, // Menggunakan kode pairing untuk koneksi
     useServer: true, // Menggunakan server
   },
 };
