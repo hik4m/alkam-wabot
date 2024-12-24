@@ -28,7 +28,7 @@ module.exports = {
             await ctx.reply({
                 video: { url: video_1 },
                 mimetype: mime.lookup("mp4"),
-                caption: `🎥 *Judul:* ${title}\n📂 *Kategori:* ${category} \n👀 *Jumlah tayang:* ${views_count}\n\n` config.msg.footer,
+                caption: `🎥 *Judul:* ${title}\n📂 *Kategori:* ${category} \n👀 *Jumlah tayang:* ${views_count}\n\n` + config.msg.footer,
             });
         } catch (error) {
             console.error("Error:", error.message);
