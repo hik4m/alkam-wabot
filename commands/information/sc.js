@@ -4,6 +4,7 @@ const {
 
 module.exports = {
     name: "sc",
+    premium: true, 
     aliases: ["script", "source", "sourcecode"],
     category: "information",
     handler: {},
