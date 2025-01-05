@@ -12,7 +12,7 @@ global.config = {
     thumbnail:
       "https://i.pinimg.com/736x/cb/44/24/cb4424110d1f61c226bf8600011f048c.jpg", // Gambar thumbnail bot
     website: "https://chat.whatsapp.com/IOI99Tx6ZN4JlQhNXMD379", // Website untuk WhatsApp bot
-    groupJid: "IOI99Tx6ZN4JlQhNXMD379", // JID untuk group bot (opsional jika tidak menggunakan requireBotGroupMembership)
+    groupJid: "120363361814160696", // JID untuk group bot (opsional jika tidak menggunakan requireBotGroupMembership)
   },
 
   // Pesan bot yang disesuaikan untuk situasi tertentu
@@ -25,7 +25,7 @@ global.config = {
       "⛔ Tidak dapat memproses karena bot bukan admin grup ini!"
     ), // Pesan jika bot bukan admin di grup
     botGroupMembership: quote(
-      "⛔ Tidak dapat memproses karena Anda tidak bergabung dengan grup bot!"
+      "⛔ Tidak dapat memproses karena Anda tidak bergabung dengan grup bot!, join ke grup untuk memproses permintaan anda melalui link yang sudah tertera di *.menu* yaa"
     ), // Pesan untuk pengguna yang tidak ada dalam grup
     cooldown: quote("🔄 Perintah ini sedang dalam cooldown, tunggu..."), // Pesan saat cooldown perintah
     coin: quote("⛔ Tidak dapat memproses karena koin Anda tidak cukup!"), // Pesan ketika koin tidak cukup
@@ -72,7 +72,7 @@ global.config = {
     autoTypingOnCmd: true, // Aktifkan status mengetik ketika memproses perintah
     cooldown: 5000, // Waktu cooldown antar perintah dalam milidetik
     restrict: false, // Membatasi perintah tertentu untuk keamanan
-    requireBotGroupMembership: false, // Apakah pengguna harus bergabung dengan grup bot
+    requireBotGroupMembership: true, // Apakah pengguna harus bergabung dengan grup bot
     port: 8080, // Port yang diinginkan (opsional jika menggunakan server)
     selfOwner: false, // Apakah bot menjadi owner
     selfReply: true, // Apakah bot merespon pesan yang dikirim bot sendiri
