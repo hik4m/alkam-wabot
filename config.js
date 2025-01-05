@@ -72,7 +72,7 @@ global.config = {
     autoTypingOnCmd: true, // Aktifkan status mengetik ketika memproses perintah
     cooldown: 5000, // Waktu cooldown antar perintah dalam milidetik
     restrict: false, // Membatasi perintah tertentu untuk keamanan
-    requireBotGroupMembership: true, // Apakah pengguna harus bergabung dengan grup bot
+    requireBotGroupMembership: false, // Apakah pengguna harus bergabung dengan grup bot
     port: 8080, // Port yang diinginkan (opsional jika menggunakan server)
     selfOwner: false, // Apakah bot menjadi owner
     selfReply: true, // Apakah bot merespon pesan yang dikirim bot sendiri
