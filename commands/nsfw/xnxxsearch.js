@@ -9,7 +9,8 @@ module.exports = {
     aliases: ["xnxx", "xnxxsearch", "xnxxs"],
     category: "nsfw",
     handler: {
-        coin: [100, "text", 1]
+        coin: [100, "text", 1], 
+        premium: true, 
     },
     code: async (ctx) => {
         if (await handler(ctx, module.exports.handler)) return;
