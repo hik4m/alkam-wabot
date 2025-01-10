@@ -10,7 +10,7 @@ module.exports = {
     name: "caklontong",
     category: "game",
     handler: {
-      grup: true, 
+      group: true, 
 },
     code: async (ctx) => {
         if (await handler(ctx, module.exports.handler)) return;
