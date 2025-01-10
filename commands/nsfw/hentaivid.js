@@ -5,7 +5,7 @@ module.exports = {
     name: "hentaivid",
     category: "nsfw",
     handler: {
-        coin: 100
+        premium: true, 
     },
     code: async (ctx) => {
         try {
