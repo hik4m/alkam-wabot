@@ -7,7 +7,10 @@ module.exports = {
     premium: true, 
     aliases: ["script", "source", "sourcecode"],
     category: "information",
-    handler: {},
+    handler: {
+     premium: true, 
+     owner: true
+},
     code: async (ctx) => {
         if (await handler(ctx, module.exports.handler)) return;
 
