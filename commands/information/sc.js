@@ -9,7 +9,7 @@ module.exports = {
     category: "information",
     handler: {
      premium: true, 
-     owner: true
+     owner: true, 
 },
     code: async (ctx) => {
         if (await handler(ctx, module.exports.handler)) return;
