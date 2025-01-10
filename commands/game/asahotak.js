@@ -6,7 +6,9 @@ const session = new Map();
 module.exports = {
   name: "asahotak",
   category: "game",
-  handler: {},
+  handler: {
+    grup: true, 
+},
   code: async (ctx) => {
     if (await handler(ctx, module.exports.handler)) return;
 
