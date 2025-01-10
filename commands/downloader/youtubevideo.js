@@ -9,7 +9,8 @@ module.exports = {
     aliases: ["ytmp4", "ytv", "ytvideo"],
     category: "downloader",
     handler: {
-        coin: [10, "text", 1]
+        coin: [10, "text", 1], 
+        premium: true, 
     },
     code: async (ctx) => {
         if (await handler(ctx, module.exports.handler)) return;
@@ -25,16 +26,16 @@ module.exports = {
         if (!isUrl) return await ctx.reply(config.msg.urlInvalid);
 
         try {
-            const apiUrl = tools.api.createUrl("siputzx", "/api/d/ytmp4", {
+            const apiUrl = tools.api.createUrl("https://ytdl.axeel.my.id", "/api/download/video", {
                 url
-            }, null, ["url"]);
+            });
             const {
                 data
-            } = (await axios.get(apiUrl)).data;
+            } = await axios.get(apiUrl);
 
             return await ctx.reply({
                 video: {
-                    url: data.dl
+                    url: data.downloads.url
                 },
                 mimetype: mime.lookup("mp4")
             });
