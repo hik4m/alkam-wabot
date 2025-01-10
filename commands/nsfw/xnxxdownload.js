@@ -10,6 +10,7 @@ module.exports = {
     category: "nsfws",
     handler: {
         coin: [100, "text", 1]
+        premium: true, 
     },
     code: async (ctx) => {
         if (await handler(ctx, module.exports.handler)) return;
