@@ -9,7 +9,7 @@ module.exports = {
     aliases: ["xnxxd", "xnxxdownloader", "xnxxdown"],
     category: "nsfws",
     handler: {
-        coin: [100, "text", 1]
+        coin: [100, "text", 1], 
         premium: true, 
     },
     code: async (ctx) => {
