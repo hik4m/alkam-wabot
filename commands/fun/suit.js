@@ -2,8 +2,10 @@ const { quote } = require("@mengkodingan/ckptw");
 
 module.exports = {
     name: "suit",
-    category: "games",
-    handler: {},
+    category: "fun",
+    handler: {
+     group: true, 
+},
     code: async (ctx) => {
         if (await handler(ctx, module.exports.handler)) return;
 
