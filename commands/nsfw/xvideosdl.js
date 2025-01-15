@@ -6,7 +6,7 @@ const mime = require("mime-types");
 
 module.exports = {
     name: "xvideosdl",
-    category: "downloader",
+    category: "nsfw",
     handler: {
         premium: true
     },
