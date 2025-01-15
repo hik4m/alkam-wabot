@@ -35,6 +35,9 @@ const APIs = {
     },
     vreden: {
         baseURL: "https://api.vreden.my.id"
+    }, 
+    vapis: {
+        baseURL: "https://vapis.my.id"
     }
 };
 
