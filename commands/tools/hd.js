@@ -1,69 +1,59 @@
+const axios = require("axios");
 const {
     monospace,
     quote
 } = require("@mengkodingan/ckptw");
-const {
-    MessageType
-} = require("@mengkodingan/ckptw/lib/Constant");
-const axios = require("axios");
 const mime = require("mime-types");
 
 module.exports = {
     name: "hd",
-    aliases: ["colorize", "enhance", "enhancer", "hd", "hdr", "remini", "unblur"],
+    aliases: ["enhance", "enhancer", "hd", "hdr", "remini"],
     category: "tools",
     handler: {
-        coin: [10, "image", 3]
+        coin: 10
     },
     code: async (ctx) => {
         if (await handler(ctx, module.exports.handler)) return;
 
-        const input = ctx.args.join(" ") || null;
         const msgType = ctx.getMessageType();
-
         const [checkMedia, checkQuotedMedia] = await Promise.all([
-            tools.general.checkMedia(msgType, "image", ctx),
+            tools.general.checkMedia(msgType, "image"),
             tools.general.checkQuotedMedia(ctx.quoted, "image")
         ]);
 
-        if (!checkMedia && !checkQuotedMedia) return await ctx.reply(
-            `${quote(tools.msg.generateInstruction(["send", "reply"], "image"))}\n` +
-            quote(tools.msg.generatesFlagInformation({
-                "-t <number>": "Jenis pemrosesan gambar (1: modelx2, 2: modelx2 25 JXL, 3: modelx4, 4: minecraft_modelx4)."
-            }))
-        );
+        if (!checkMedia && !checkQuotedMedia) return await ctx.reply(quote(tools.msg.generateInstruction(["send", "reply"], "image")));
 
         try {
-            const types = ["modelx2", "modelx2 25 JXL", "modelx4", "minecraft_modelx4"];
-            const flag = tools.general.parseFlag(input, {
-                "-t": {
-                    type: "value",
-                    key: "type",
-                    validator: (val) => !isNaN(val) && parseInt(val) > 0 && parseInt(val) <= types.length,
-                    parser: (val) => types[parseInt(val) - 1]
-                }
-            });
-
             const buffer = await ctx.msg.media.toBuffer() || await ctx.quoted?.media.toBuffer();
-            const uploadUrl = await tools.general.upload(buffer);
-            const apiUrl = tools.api.createUrl("itzpire", "/tools/enhance", {
-                url: uploadUrl,
-                type: flag.type || tools.general.getRandomElement(types)
-            }, null, ["url"]);
-            const {
-                data
-            } = await axios.get(apiUrl);
+            const result = await upscale(buffer);
 
             return await ctx.reply({
-                image: {
-                    url: data.result.img
-                },
+                image: result,
                 mimetype: mime.lookup("png")
             });
         } catch (error) {
             console.error(`[${config.pkg.name}] Error:`, error);
-            if (error.status !== 200) return await ctx.reply(config.msg.notFound);
+            if (error.response && error.response.status !== 200) return await ctx.reply(config.msg.notFound);
             return await ctx.reply(quote(`⚠️ Terjadi kesalahan: ${error.message}`));
         }
     }
 };
+
+// Dibuat oleh Axel (https://github.com/AxellNetwork)
+async function upscale(buffer) {
+    try {
+        const response = await axios.post("https://lexica.qewertyy.dev/upscale", {
+            image_data: Buffer.from(buffer, "base64").toString("base64"),
+            format: "binary"
+        }, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            responseType: "arraybuffer"
+        });
+        return Buffer.from(response.data);
+    } catch (error) {
+        console.error(`[${config.pkg.name}] Error:`, error);
+        return null;
+    }
+}
