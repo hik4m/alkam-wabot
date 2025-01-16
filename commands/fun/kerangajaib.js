@@ -28,6 +28,6 @@ module.exports = {
 
         const randomAnswer = answers[Math.floor(Math.random() * answers.length)];
 
-        await ctx.reply(quote(`Pertanyaan: ${input}\nKerang Ajaib: *${randomAnswer}*`));
+        await ctx.reply(quote(`Pertanyaan: ${input}\nKerang Ajaib: *${randomAnswer}*\n` + config.msg.footer ));
     }
 };
