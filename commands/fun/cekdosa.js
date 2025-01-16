@@ -5,7 +5,7 @@ module.exports = {
     category: "fun",
     handler: {
       coin: 10,
-}
+}, 
     code: async (ctx) => {
         // Data JSON untuk fitur cek dosa
         const data = {
