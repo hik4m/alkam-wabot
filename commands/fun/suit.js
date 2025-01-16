@@ -45,7 +45,8 @@ module.exports = {
             text: `🕹️ *Game Batu-Gunting-Kertas*\n\n` +
                 `👤 @${user1} : ${user1Choice}\n` +
                 `👤 @${user2} : ${user2Choice}\n\n` +
-                `${result}`,
+                `${result}\n` +
+                 config.msg.footer,
             mentions: [ctx.sender.jid, mentionedJids[0]] // Mention kedua pemain
         });
     }
