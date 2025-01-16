@@ -1,5 +1,5 @@
 const { quote } = require("@mengkodingan/ckptw");
-const config = require("../../config");
+
 
 module.exports = {
     name: "report",
@@ -32,7 +32,7 @@ module.exports = {
             });
 
             // Konfirmasi ke pengguna bahwa pesan telah dikirim
-            return await ctx.reply(quote("✅ Laporan Anda telah berhasil dikirim ke Owner!"));
+            return await ctx.reply(quote(`✅ Laporan Anda telah berhasil dikirim ke Owner ${config.owner.name}!`));
         } catch (error) {
             console.error(`[Report Error]:`, error);
             return await ctx.reply(quote("⚠️ Terjadi kesalahan saat mengirim laporan. Silakan coba lagi nanti."));
