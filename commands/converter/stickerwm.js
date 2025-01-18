@@ -14,7 +14,7 @@ module.exports = {
     aliases: ["swm", "stikerwm"],
     category: "converter",
     handler: {
-      premium: true
+      premium: true,
 },
     code: async (ctx) => {
         if (await handler(ctx, module.exports.handler)) return;
