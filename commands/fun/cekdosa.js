@@ -21,14 +21,16 @@ module.exports = {
                 "Memfitnah orang",
                 "Ghibah",
                 "Sombong",
-                "Nipu orang"
+                "Nipu orang",
+                "Berzina
             ],
             tingkatDosa: [0, 100], // 0% - 100%
             penghuni: [
                 "Neraka Jahannam",
                 "Neraka Lazha",
                 "Neraka Al-Huthamah",
-                "Neraka As-Sa'ir, Saqar",
+                "Neraka As-Sa'ir",
+                "Neraka Saqar",
                 "Neraka Jahim",
                 "Neraka Hawiyah"
             ]
